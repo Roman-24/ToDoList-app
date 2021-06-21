@@ -4,10 +4,13 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
+# zadefinovanie modelu -> Task
 class Task(models.Model):
-    # on_delete je čo ak user neexistuje 
-    # to CASCADE je že všetky child objekty
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    
+    # on_delete je co ak user neexistuje 
+    # to CASCADE je ze vsetky child objekty
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     complete = models.BooleanField(default=False)
