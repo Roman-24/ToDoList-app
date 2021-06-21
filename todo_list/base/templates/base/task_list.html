@@ -9,32 +9,40 @@
     </div>
 </div>
 
-<hr>
-<h1>My To Do List</h1>
 
+
+<!--
 <a href="{% url 'task-create' %}">Add Task</a>
-<!-- nemusíš to nikam pripájať lebo django už defaultne hľadá tento súbor-->
 
 <form method="GET">
     <input type="text" name="search-area" value="{{search_input}}">
     <input type="submit" value="Search">
 </form>
+-->
 
-<table>
-    <tr>
-        <th>Item</th>
-        <th></th>
-        <th></th>
-    </tr>
+<div class="task-items-wrapper">
     {% for task in tasks %}
-    <tr>
-        <td>{{task.title}}</td>
-        <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
-        <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
-    </tr>
+    <div class="task-wrapper">
+        {% if task.complete %}
+        <div class="task-title">
+            <div class="task-complete-icon"></div>
+            <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i>
+        </div>
+        <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+
+        {% else %}
+        <div class="task-title">
+            <div class="task-incomplete-icon"></div>
+            <a href="{% url 'task-update' task.id %}">{{task}}</a>
+        </div>
+        <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+        {% endif %}
+        
+    </div>
+
     {% empty %}
         <h3>No items in list</h3>
     {% endfor %}
-</table>
+</div>
 
 {% endblock content %}
