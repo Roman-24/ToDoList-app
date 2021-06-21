@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do Items</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                background-color: #FAFAFA;
+                font-family: 'Nanum Pen Script', cursive;
+                padding-top: 60px;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Raleway', sans-serif;
+            }
+
+            a, p{
+                color: darkblue;
+            }
+
+            .container{
+                max-width: 600px;
+                margin: auto;
+                background-color: #fff;
+                -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+                box-shadow: 2px 2px 13px 5px rgba(68, 68, 68, 0.6);
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </body>
+</html>
