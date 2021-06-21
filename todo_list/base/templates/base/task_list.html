@@ -2,6 +2,13 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
+<div class="header-bar">
+    <div>
+        <h1>Hello!</h1>
+        <h3 style="margin: 0;">You have <em>{{count}}</em> incomplete task{{count|pluralize:"s"}}</h3>
+    </div>
+</div>
+
 <h1>My To Do List</h1>
 
 <a href="{% url 'task-create' %}">Add Task</a>
